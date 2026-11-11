@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f6f3ee;
+  --color-paper-2: #ede8df;
+  --color-ink: #14181f;
+  --color-ink-2: #343a46;
+  --color-muted: #4a505c;
+  --color-rule: #c9c3b8;
+  --color-rule-soft: #ddd7cc;
+  --color-accent: #2346d8;
+  --color-accent-soft: #a9b4ff;
+  --color-burnt: #cc5500;
+
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Hero background ---------- */
+@keyframes fk-drift { to { background-position: 28px 28px; } }
+@keyframes fk-marquee { to { transform: translateX(-50%); } }
+@keyframes fk-cool {
+  0%, 100% { transform: translateX(0) scaleX(1) skewY(0deg); }
+  33% { transform: translateX(10%) scaleX(1.25) skewY(-4deg); }
+  66% { transform: translateX(-4%) scaleX(0.9) skewY(3deg); }
+}
+@keyframes fk-cyan { 50% { transform: translate(30%, -40%); } }
+@keyframes fk-mist {
+  0%, 100% { transform: translateX(0); opacity: 0.6; }
+  50% { transform: translateX(60%); opacity: 0.3; }
+}
+@keyframes fk-flare {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  30% { transform: translate(-14%, 10%) scale(1.2); }
+  70% { transform: translate(6%, -8%) scale(0.92); }
+}
+@keyframes fk-amber { 50% { transform: translate(-18%, -12%) scale(1.15); } }
+@keyframes fk-ember {
+  0%, 100% { transform: translateX(0); opacity: 1; }
+  50% { transform: translateX(-30%); opacity: 0.6; }
+}
+@keyframes fk-orb { 50% { transform: translate(40px, -50px); } }
+@keyframes fk-orb2 { 50% { transform: translate(-30px, 40px); } }
+@keyframes fk-sweep {
+  from { transform: translateX(-60%) skewX(-12deg); }
+  to { transform: translateX(260%) skewX(-12deg); }
+}
+
+.fk-grid { animation: fk-drift 6s linear infinite; }
+.fk-marquee { animation: fk-marquee 30s linear infinite; }
+.fk-cool { animation: fk-cool 16s ease-in-out infinite; transform-origin: left center; }
+.fk-cyan { animation: fk-cyan 12s ease-in-out infinite; }
+.fk-mist { animation: fk-mist 20s ease-in-out infinite; }
+.fk-flare { animation: fk-flare 15s ease-in-out infinite; }
+.fk-amber { animation: fk-amber 19s ease-in-out infinite; }
+.fk-ember { animation: fk-ember 11s ease-in-out infinite; }
+.fk-orb { animation: fk-orb 13s ease-in-out infinite; }
+.fk-orb2 { animation: fk-orb2 17s ease-in-out infinite; }
+.fk-sweep { animation: fk-sweep 10s cubic-bezier(0.6, 0, 0.4, 1) infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fk-grid, .fk-marquee, .fk-cool, .fk-cyan, .fk-mist, .fk-flare,
+  .fk-amber, .fk-ember, .fk-orb, .fk-orb2, .fk-sweep { animation: none; }
+}
