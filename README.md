@@ -13,10 +13,3 @@ npm run dev
 
 Open http://localhost:3000.
 
-## Edit content
-
-All text, skills, projects and résumé entries live in `src/data/site.ts`. Project screenshots go in `public/projects/`.
-
-## Deploy
-
-Every push to `main` builds the site and publishes it to GitHub Pages through `.github/workflows/deploy.yml`.
